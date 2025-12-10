@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men haqimda — Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👤</text></svg>">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      padding: 0.4rem 0;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #3498db;
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: white;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+    }
+
+    .projects, .testimonials {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .project-card, .testimonial-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    .testimonial-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .testimonial-form input,
+    .testimonial-form textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .testimonial-form button {
+      padding: 0.8rem;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .testimonial-form button:hover {
+      background: #2980b9;
+    }
+
+    /* Modal */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 200;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .modal-content button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-pic img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><img src="photo_2025-11-24_16-30-46.jpg" alt=""> Sulaymon</div>
+    <nav>
+      <ul>
+        <li><a href="#about">Haqida</a></li>
+        <li><a href="#projects">Loyihalar</a></li>
+        <li><a href="#skills">Ko'nikmalar</a></li>
+        <li><a href="#testimonials">Tavsiyalar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="about-content">
+      <div class="profile-pic"><img src="photo_2025-11-24_16-30-46.jpg" alt=""></div>
+      <div class="about-text">
+        <h2>Men Sulaymon</h2>
+        <p>
+          Salom! Men Sulaymon-dasturlashga qiziqadigan talaba. Dasturlashni 2023-yildan beri o'rganib kelaman.
+          Web dasturlash, maxsus algoritmlar va foydalanuvchi tajribasiga e'tibor qarataman.
+          Hozirda JavaScript, React va backend texnologiyalarini o'rganishda.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 style="margin-bottom: 2rem; color: #2c3e50;">Loyihalar</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Portfolio Veb-sayti</h3>
+        <p>Shaxsiy portfolio loyihasi. HTML, CSS, JS asosida yasalgan.</p>
+      </div>
+      <div class="project-card">
+        <h3>To-do List Dasturi</h3>
+        <p>Foydalanuvchi vazifalarini boshqarish uchun interaktiv ilova.</p>
+      </div>
+      <div class="project-card">
+        <h3>Ob-havo Ilavasi</h3>
+        <p>OpenWeather API yordamida joriy ob-havo ma'lumotlarini ko'rsatadi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 style="margin-bottom: 2rem; color: #2c3e50;">Ko'nikmalar</h2>
+    <div class="skills">
+      <div class="skill-item">
+        <span class="skill-icon">🌐</span>
+        <span>HTML5</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🎨</span>
+        <span>CSS3</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">⚙️</span>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">⚛️</span>
+        <span>React</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">⚛️</span>
+        <span>Bootstrap</span>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">⚛️</span>
+        <span>Wordpress</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 style="margin-bottom: 2rem; color: #2c3e50;">Tavsiyalar</h2>
+    <div class="testimonials" id="testimonials-list">
+      <!-- Dastlabki 3 ta tavsiya -->
+      <div class="testimonial-card">
+        <p>“Ali juda iqtidorli o'quvchi. Tez o'rganadi va muammolarni hal qilishda ijodkor.”</p>
+        <strong>— O'qituvchi, Ziyoda Rahmonova</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Birgalikda loyiha qildik — juda mas’uliyatli va vaqtida bajaradi.”</p>
+        <strong>— Hamkasb, Javlonbek Tursunov</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>“Dasturlashda qo'lidan keladigan hamma ishni qiladi. Doim yordam beradi.”</p>
+        <strong>— Do'st, Shohruh Mirzaev</strong>
+      </div>
+    </div>
+
+    <form class="testimonial-form" id="testimonial-form">
+      <input type="text" id="name" placeholder="Ismingiz" required />
+      <textarea id="message" rows="3" placeholder="Tavsiyangizni yozing..." required></textarea>
+      <button type="submit">Tavsiya berish</button>
+    </form>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal">
+    <div class="modal-content">
+      <h3>✅ Muvaffaqiyatli!</h3>
+      <p>Tavsiyangiz qabul qilindi. Rahmat!</p>
+      <button onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script>
+    // Tavsiya yuborish
+    document.getElementById('testimonial-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+      
+      const card = document.createElement('div');
+      card.className = 'testimonial-card';
+      card.innerHTML = `
+        <p>“${message}”</p>
+        <strong>— ${name}</strong>
+      `;
+      
+      document.getElementById('testimonials-list').appendChild(card);
+      
+      // Formani tozalash
+      this.reset();
+      
+      // Modal ko'rsatish
+      document.getElementById('modal').style.display = 'flex';
+    });
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Modal tashqarisini bosish — yopish
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Play } from "lucide-react";
+
+// Default export: single-file React component for a modern game landing page
+// Tailwind is assumed to be available in the project.
+// Uses framer-motion for small animations and lucide-react for icons.
+
+export default function GameLanding() {
+  const [players, setPlayers] = useState([
+    { name: "Amina", score: 1240 },
+    { name: "Orbek", score: 980 },
+    { name: "Sulaymon", score: 860 },
+  ]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    // Mock: animate scoreboard changes every 7s
+    const id = setInterval(() => {
+      setPlayers((p) => {
+        const copy = [...p];
+        copy.sort(() => Math.random() - 0.5);
+        copy[0].score += Math.floor(Math.random() * 50);
+        return copy.sort((a, b) => b.score - a.score);
+      });
+    }, 7000);
+    return () => clearInterval(id);
+  }, []);
+
+  function handlePlay() {
+    if (!username) {
+      alert("Iltimos, oldin foydalanuvchi nomingizni kiriting.");
+      return;
+    }
+    setIsPlaying(true);
+    // Here you would route to the actual game (iframe/canvas) or start WebSocket
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-indigo-900 text-slate-100">
+      {/* Header */}
+      <header className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-gradient-to-tr from-indigo-400 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl">
+            <span className="font-extrabold text-lg">G</span>
+          </div>
+          <div>
+            <h1 className="text-2xl font-bold leading-tight">GameZone — O'z o'yiningiz</h1>
+            <p className="text-sm text-slate-300">Tez, chiroyli va mobilga mos — darhol o'yna!</p>
+          </div>
+        </div>
+        <nav className="hidden md:flex gap-6 items-center text-slate-200">
+          <a className="hover:underline" href="#play">O'yna</a>
+          <a className="hover:underline" href="#score">Reyting</a>
+          <a className="hover:underline" href="#features">Xususiyatlar</a>
+          <button className="bg-indigo-500/80 hover:bg-indigo-500 transition rounded-md px-4 py-2 text-sm">Kirish</button>
+        </nav>
+      </header>
+
+      {/* Hero */}
+      <main className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <section className="lg:col-span-2">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl p-8 bg-gradient-to-b from-white/3 via-white/5 to-transparent shadow-xl"
+          >
+            <div className="flex items-start gap-6">
+              <div className="flex-1">
+                <h2 className="text-4xl font-extrabold tracking-tight">Sarguzasht boshlanmoqda</h2>
+                <p className="mt-3 text-slate-200 text-lg">Bir zumda o'yinga qo'shiling — do'stlar bilan raqobat qiling va reytingni egallang.</p>
+
+                <div id="play" className="mt-6 flex gap-3 flex-wrap items-center">
+                  <input
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Foydalanuvchi nomi (masalan: Orbek22)"
+                    className="px-4 py-2 rounded-md bg-white/5 border border-white/6 placeholder-slate-400 outline-none"
+                  />
+
+                  <button
+                    onClick={handlePlay}
+                    className="inline-flex items-center gap-2 py-2 px-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-pink-500 shadow-lg transform active:scale-95"
+                  >
+                    <Play size={16} />
+                    <span className="font-semibold">Tez o'yna</span>
+                  </button>
+
+                  <a className="text-sm text-slate-300 underline" href="#features">Xususiyatlarni ko'rish</a>
+                </div>
+
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-slate-300">
+                  <div className="p-3 bg-white/3 rounded-xl">
+                    <div className="text-2xl font-bold">120k+</div>
+                    <div className="text-xs">Faol o'yinchilar</div>
+                  </div>
+                  <div className="p-3 bg-white/3 rounded-xl">
+                    <div className="text-2xl font-bold">45</div>
+                    <div className="text-xs">Darajalar</div>
+                  </div>
+                  <div className="p-3 bg-white/3 rounded-xl">
+                    <div className="text-2xl font-bold">4.8</div>
+                    <div className="text-xs">O'rtacha reyting</div>
+                  </div>
+                  <div className="p-3 bg-white/3 rounded-xl">
+                    <div className="text-2xl font-bold">PvP</div>
+                    <div className="text-xs">Jonli matchlar</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-64 hidden lg:block">
+                {/* Placeholder for promotional art or animated GIF */}
+                <div className="h-44 rounded-xl bg-gradient-to-t from-pink-500/50 to-indigo-400/40 flex items-center justify-center shadow-inner">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold">Promo Art</div>
+                    <div className="text-sm text-white/90">Bu yerga 3D yoki GIF qo'ying</div>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-3 bg-white/4 rounded-xl">
+                  <div className="text-xs text-slate-300">Tez fakt</div>
+                  <div className="mt-2 font-semibold">Kunlik sovrin: 5000 tangalar</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Game area (placeholder) */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isPlaying ? 1 : 0.95 }}
+            transition={{ duration: 0.5 }}
+            className="mt-6 rounded-2xl overflow-hidden bg-black/80 border border-white/6 shadow-2xl"
+            style={{ minHeight: 420 }}
+          >
+            {isPlaying ? (
+              <div className="p-4 h-full flex flex-col">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-sm text-slate-300">Foydalanuvchi: <strong className="text-white">{username}</strong></div>
+                  <div className="text-sm text-slate-300">Qolgan hayot: <strong className="text-white">3</strong></div>
+                </div>
+
+                {/* In a real project, swap this div with a canvas, WebGL renderer, or iframe that loads your game */}
+                <div className="flex-1 rounded-md bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center text-slate-400">
+                  <div className="text-center">
+                    <div className="text-xl">O'yin shu yerda yuklanadi</div>
+                    <div className="text-sm mt-2">(Canvas yoki iframe orqali integratsiya qiling)</div>
+                  </div>
+                </div>
+
+                <div className="mt-4 flex gap-3">
+                  <button onClick={() => setIsPlaying(false)} className="px-4 py-2 rounded-md bg-white/6">Chiqish</button>
+                  <button className="px-4 py-2 rounded-md bg-gradient-to-r from-indigo-500 to-pink-500">Sovrin olish</button>
+                </div>
+              </div>
+            ) : (
+              <div className="p-12 text-center">
+                <div className="text-lg text-slate-300">O'yinni boshlash uchun foydalanuvchi nomingizni kiriting va <strong>Tez o'yna</strong> tugmasini bosing.</div>
+              </div>
+            )}
+          </motion.div>
+        </section>
+
+        {/* Sidebar: Leaderboard */}
+        <aside id="score" className="lg:col-span-1">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.15 }}
+            className="rounded-2xl p-4 bg-white/3 shadow-lg sticky top-6"
+          >
+            <h3 className="font-bold text-lg">Bugungi reyting</h3>
+            <p className="text-xs text-slate-200/80">Eng yuqori ball to'plagan o'yinchilar</p>
+
+            <ul className="mt-4 space-y-3">
+              {players.map((p, i) => (
+                <li key={p.name} className="flex items-center justify-between bg-white/6 p-3 rounded-xl">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-pink-400 flex items-center justify-center font-semibold">{i + 1}</div>
+                    <div>
+                      <div className="font-semibold">{p.name}</div>
+                      <div className="text-xs text-slate-200">{Math.floor(Math.random() * 60)}m oldin o'ynadi</div>
+                    </div>
+                  </div>
+                  <div className="font-bold">{p.score}</div>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-4 text-center">
+              <a href="#" className="text-sm underline text-slate-200">To'liq reyting ro'yxatini ko'rish</a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="mt-4 rounded-2xl p-4 bg-white/4 shadow-inner hidden md:block"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <h4 className="font-semibold">Turnirlar</h4>
+            <p className="text-xs text-slate-200/80 mt-2">Haftalik turnirlar va sovrinlar haqida ma'lumot.</p>
+            <div className="mt-3 grid grid-cols-1 gap-2">
+              <div className="p-3 rounded-md bg-white/6">O'yinchi vs O'yinchi — Juma, 20:00</div>
+              <div className="p-3 rounded-md bg-white/6">Ko'p o'yinchi rejimi — Shanba, 18:00</div>
+            </div>
+          </motion.div>
+        </aside>
+
+        {/* Features (lower on page) */}
+        <section id="features" className="lg:col-span-3 mt-8">
+          <div className="rounded-2xl p-6 bg-white/3">
+            <h3 className="text-xl font-bold">Xususiyatlar</h3>
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-4 bg-white/5 rounded-xl">
+                <h4 className="font-semibold">Yengil va tez</h4>
+                <p className="text-sm mt-2 text-slate-200/80">O'yin mobil va desktop uchun optimallashtirilgan.</p>
+              </div>
+              <div className="p-4 bg-white/5 rounded-xl">
+                <h4 className="font-semibold">Jonli PvP</h4>
+                <p className="text-sm mt-2 text-slate-200/80">WebSocket orqali past kechikishli raqobat.</p>
+              </div>
+              <div className="p-4 bg-white/5 rounded-xl">
+                <h4 className="font-semibold">Sovrinlar</h4>
+                <p className="text-sm mt-2 text-slate-200/80">Turnirlar, kunlik vazifalar va yetkazib beriladigan sovrinlar.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer className="mt-12 py-8 border-t border-white/6">
+        <div className="max-w-6xl mx-auto px-6 text-center text-slate-400 text-sm">© {new Date().getFullYear()} GameZone · Barcha huquqlar himoyalangan</div>
+      </footer>
+    </div>
+  );
+}

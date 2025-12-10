@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+}
+
+/* Uslubli nom chap yuqori (3 ball) */
+.home-icon {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Navigatsiya */
+nav ul {
+    display: flex;
+    list-style: none;
+    background: #222;
+    padding: 10px;
+    justify-content: center;
+    margin: 0;
+}
+
+.sss {
+    display: flex;
+    list-style: none;
+    background: #222;
+    padding: 10px;
+    justify-content: left;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 6px 10px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+nav ul li a:hover {
+    color: yellow;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Bo‘limlar */
+.section {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Profil rasmi */
+.profile {
+    width: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Ko‘nikmalar */
+.skills-box {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.skill {
+    text-align: center;
+}
+
+.skill img {
+    width: 60px;
+    display: block;
+    margin: auto;
+}
+
+/* Loyihalar */
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.project {
+    width: 250px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* Tavsiyalar */
+#review-list {
+    list-style: none;
+    padding: 0;
+}
+
+#review-list li {
+    background: #fff;
+    margin: 8px auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Pop-up */
+.popup {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: green;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.popup.show {
+    bottom: 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: #222;
+    align-items: center;
+    color: white;   
+}
