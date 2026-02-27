@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shajara</title>
+<style>
+body {
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+.tree ul {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.tree li {
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid white;
+    width: 50%;
+    height: 20px;
+}
+
+.tree li::after{
+    right: auto;
+    left: 50%;
+    border-left: 2px solid white;
+}
+
+.tree li:only-child::after, 
+.tree li:only-child::before {
+    display: none;
+}
+
+.tree li div {
+    border: 2px solid white;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<h2>Shajara</h2>
+
+<div class="tree">
+<ul>
+    <li>
+        <div>Bobom</div>
+        <ul>
+            <li>
+                <div>Ota</div>
+                <ul>
+                    <li><div>Men</div></li>
+                    <li><div>Ukam</div></li>
+                </ul>
+            </li>
+            <li>
+                <div>Amaki</div>
+                <ul>
+                    <li><div>Jiyan 1</div></li>
+                    <li><div>Jiyan 2</div></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>
+
+</body>
+</html>

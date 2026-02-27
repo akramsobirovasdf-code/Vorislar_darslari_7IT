@@ -1,0 +1,39 @@
+//14443
+                (function () {
+                    var strt = function() {
+                        var config = {
+                            restart: true,
+                            parameters: {
+                                skipSeconds: 0,
+                                type: 2,
+                                time: 300,
+                                autohide: 0,
+                                position: 0,
+                                closePixel: '//franecki.net/point/?method=retarget&&id=plc157323&seg=1&key=b2cc6d92f9dc516ab7114227a6134b26&adwuid=6935a74d0297916500838446',
+                                newTab: true,
+                                copyright: true,
+                                timeout: 0,
+                                additionalStyles: null,
+                                secondsBeforeStart: 0
+                            },
+                            ads: [{
+                                id: 14443,
+                                link: '//bashirian.biz/content/static/b3a04076b91b917f34b7c66f7d6d00e0/14443.html?pauid=6935a74d0297916500838446&reqId=aef2006f-045e-44bd-a017-a7a0f23bd104&external_domain=uzmovi.net&ct=na',
+                                image: '//s.schulist.link/media/3/8/38258783675316_894.webp'
+                                , imageLandscape: '//s.schulist.link/media/5/2/52316673759388_61.webp' 
+                            }]
+                        };
+                        window['mad_' + '14443'] = new AdMobileAd(config);
+                    };
+                    if (typeof AdMobileAd !== 'undefined') {
+                        strt();
+                    } else {
+                        var head = document.querySelector('head');
+                        var lb = document.createElement('script');
+                        lb.src = '//franecki.net/js/ma.js?1766219753';
+                        lb.onload = strt;
+                        head.appendChild(lb);
+                    }
+                })();
+new (function(){ 
+var img69465fe941d04 = document.createElement("img"); img69465fe941d04.src = 'https://z.cdn.adnetwork.bet/load?z=1762598896&cp1=sticker&cp2=157323&key=-1kBoJiLLVJVSh0_1WQ2Ks'; })();window.amsp_load_0c3983ff=window.amsp_load_0c3983ff||[];window.amsp_load_0c3983ff.push({h:"b3a04076b91b917f34b7c66f7d6d00e0",ts:Date.now()});
